@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F3F3F3;
+}
+
+.container-main{
+    margin-top: 85px;
+}
+.btn-edit{
+    width: 30%;
+    background-color: #f05a50;
+    padding: 5px 25px;
+    border-radius: 3px;
+    color: white;
+    float: left;
+
+    border: none;font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-view{
+    width: 40%;
+    background-color: #f05a50;
+    border-color: #ee4439;
+    padding: 5px 25px;
+    border-radius: 3px;
+    color: white;
+
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.nav-bar-header{
+    height: 75px;
+    width: 100%;
+    background-color: #f05a50;
+    color: white;
+    font-size: 25px;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.nav-bar-children{
+
+    padding-left: 8%;
+    padding-top: 15px;
+
+}
+
+.nav-logo{
+    cursor: pointer;
+}
+
+.card {
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color:#ffffff ;
+    margin-top: 5%
+
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.panel-default > .panel-heading-custom {
+    background-color: #2A343F;
+    color: white;
+}
+
+.div-align{
+    float:left;
+    vertical-align: middle;
+}
+
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff; /* Black background with opacity */
+    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+/*W3 schools : How to create a snackbar*/
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 350px; /* Set a default minimum width */
+    margin-left: -175px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 2; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+
+
+}
+
+
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}

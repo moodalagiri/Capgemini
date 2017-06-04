@@ -1,0 +1,72 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/productDetails.js"></script>
+
+</head>
+<body ng-app="prodDetails">
+<div class="nav-bar-header">
+    <!-- logo -->
+    <div class="nav-bar-children">
+        <span class="nav-logo"><a href="index.html">Capgemini Technical Test</a></span>
+    </div>
+</div>
+
+<div class="container-main">
+<div id="snackbar"><div id="snackText"></div></div>
+
+<div class="container">
+    <div class="row">
+        <div ng-controller="DetailsController" ng-init="loadDetails()">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading panel-heading-custom"><h4 >Product Details</h4></div>
+                        <div class="panel-body">
+                            <div class="panel panel-default">
+
+                                <div class="panel-body">
+                                    <p><strong>Name :</strong>
+                                        {{data.name}} </p><br>
+                                    <p><strong>Description :</strong>
+                                        {{data.description}} </p><br>
+                                    <p><strong>Price :</strong>
+                                        {{data.price}}</p><br>
+                                    <p><strong>Quantity Available :</strong>
+                                        {{data.quantity}}</p><br>
+                                    <p><strong>Valid:</strong>
+                                        {{data.valid}}</p><br>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="quantity">Checkout Quantity:</label>
+                                                <input type="number" class="form-control col-md-3" required id="quantity" ng-model="data.cquantity">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-edit" ng-click="sendEdit()" style="float: right; margin: 10px" ng-show="isVisible">Edit</button>
+                                <button class="btn btn-sm btn-edit" ng-click="checkOut(data)" style="float: right; margin: 10px">Checkout</button>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

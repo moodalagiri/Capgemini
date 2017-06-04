@@ -1,0 +1,66 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/login.js"></script>
+
+</head>
+<body ng-app="loginDetails">
+<div class="nav-bar-header">
+    <!-- logo -->
+    <div class="nav-bar-children">
+        <span class="nav-logo"><a href="index.html">Capgemini Technical Test</a></span>
+    </div>
+</div>
+
+<div class="container-main">
+    <div id="snackbar"><div id="snackText"></div></div>
+<br>
+<div class="container">
+    <div class="row">
+        <div ng-controller="loginController">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading panel-heading-custom"><h4 >Login <a href="index.html"> < BACK</a></h4></div>
+                        <div class="panel-body">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="name">User Name:</label>
+                                        <input type="text" class="form-control" id="name" ng-model="data.username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input type="password" class="form-control" id="password"  ng-model="data.password">
+                                    </div>
+                                    <div><button class="btn-edit"  style="display: block; float: right" ng-click="loadloginDetails(data);">Login</button></div>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

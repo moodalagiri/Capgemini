@@ -1,0 +1,143 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    
+    <script src="js/index.js"></script>
+
+</head>
+<body ng-app="index">
+<div ng-controller="productListController" ng-init="loadData()">
+<div class="nav-bar-header">
+    <!-- logo -->
+    <div class="nav-bar-children">
+        <span class="nav-logo"><a href="index.html">Capgemini Technical Test</a></span>
+        <a href="login.html" style="float: right; margin-right: 5%" ng-hide="isVisible" >Admin Login</a>
+        <a style="float: right;  margin-right: 5%" ng-show="isVisible" ng-click="logOut()">Logout</a>
+
+    </div>
+</div>
+
+<div class="container-main">
+
+    <div id="overlay">
+        <div class="loader"></div>
+    </div>
+    <div id="snackbar"><div id="snackText"></div></div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8">
+
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-custom">
+                                <h4>Product List</h4>
+                            </div>
+                            <div class="panel-body">
+
+                                <div ng-repeat="x in data">
+                                    <div class="row">
+                                        <div class="col-md-4 div-align">
+                                            <h4>{{x.name}}</h4>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button class="btn-view" ng-click="showDetails(x)">View</button>
+                                        </div>
+                                        <div class="col-md-4">
+
+                                            <button ng-show="isVisible" class="btn-view" ng-click="editDetails(x)">Edit</button>
+
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+            </div>
+
+            <div class="col-md-4" ng-show="isVisible">
+                <div ng-controller="AddProductController">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-custom"><h4>Add New Product</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="sku">SKU:</label>
+                                    <input type="text" class="form-control" required id="sku" ng-model="product.sku">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Name:</label>
+                                    <input type="text" class="form-control" required id="name" ng-model="product.name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description:</label>
+                                    <textarea cols="5" class="form-control" required id="description" ng-model="product.description"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Price:</label>
+                                    <input type="number" class="form-control" required id="price" ng-model="product.price">
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity">Quantity:</label>
+                                    <input type="number" class="form-control" required id="quantity" ng-model="product.quantity">
+                                </div>
+                                <center>
+                                    <button class=" btn  btn-view" ng-click="addProduct(product)">Add Product</button>
+                                </center>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div ng-controller="CreatePersonController">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-custom"><h4>Create New Admin</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="pname">User Name:</label>
+                                    <input type="text" class="form-control" id="pName" ng-model="person.username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="paddress">Password:</label>
+                                    <input type="password" class="form-control" id="paddress" ng-model="person.password">
+                                </div>
+
+
+                                <center>
+                                    <button class=" btn  btn-view" ng-click="addPerson(person)">Add User</button>
+                                </center>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+</div>
+</body>
+</html>
